@@ -37,14 +37,11 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.graphql:spring-graphql-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation("network.lightsail:stellar-sdk:1.3.1")
 }
 
 tasks.generateJava {
     schemaPaths.add("${projectDir}/src/main/resources/graphql-client")
     packageName = "org.stellar.stellarreactivejavarpc.codegen"
     generateClient = true
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
